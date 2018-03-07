@@ -5,14 +5,15 @@
 #include <memory>
 
 
-template <typename T>
+template <typename T, typename U>
+
 struct Iterator{
-    node<T>* m_itr;
-    node<T>* m_next;
-    T        m_value;
+    T*      m_itr;
+    T*      m_next;
+    U       m_value;
 
     Iterator() : m_itr(nullptr), m_next(nullptr), m_value(nullptr){}
-    Iterator(node<T>* head) : m_itr(head), m_next(head->m_next), m_value(head->m_value){}
+    Iterator(T* head) : m_itr(head), m_next(head->m_next), m_value(head->m_value){}
 
     Iterator& operator++ (){ // Pre-increment i.e itr++
         assert(m_itr != nullptr && "Out-of-bounds Iterator increment!");

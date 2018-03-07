@@ -5,6 +5,8 @@
 #include <memory>
 #include <iostream>
 
+#include "iterator.h"
+
 template <typename T>
 struct node{
     node<T>*    m_next;
@@ -24,7 +26,7 @@ public:
         }
     void create_node(T value);
     void print(){
-        Iterator<T> itr(head);
+        Iterator<node<T>, T> itr(head);
         while(itr.m_itr != nullptr){
             std::cout << itr.m_value << std::endl;
             ++itr;

@@ -8,7 +8,7 @@ default: main
 main:  main.o
 	$(CC) $(CXXFLAGS) -o main main.o
 
-main.o:  main.cpp linked_list.h
+main.o:  main.cpp linked_list.h iterator.h
 	$(CC) $(CXXFLAGS) -c main.cpp
 
 clean:
